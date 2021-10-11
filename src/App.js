@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="meals">
+    <div>
       <GlobalStorage>
         <Switch>
           <Route exact path="/" component={ Login } />

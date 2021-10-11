@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import styles from './css/login.module.css';
+import cookPadLogo from '../images/cookPadLogo.jpg';
+import nextArrow from '../images/nextarrow.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -23,6 +26,10 @@ const Login = () => {
     return setEnable(false);
   }, [password, email]);
 
+  useEffect(() => {
+    console.log(styles);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,36 +45,37 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={ (e) => handleSubmit(e) }>
-        <label htmlFor="email">
-          EMAIL
+    <div className={ styles.login_page }>
+      <div className={ styles.main_login }>
+        <div className={ styles.logo }>
+          <img src={ cookPadLogo } alt="Logo CookPad" />
+        </div>
+        <form onSubmit={ (e) => handleSubmit(e) } className={ styles.form }>
           <input
             id="email"
             type="text"
             data-testid="email-input"
-            placeholder="Digite seu Email"
+            placeholder="Email"
             onChange={ ({ target }) => setEmail(target.value) }
           />
-        </label>
-        <label htmlFor="password">
-          SENHA
           <input
             id="password"
             type="password"
             data-testid="password-input"
-            placeholder="Digite sua Senha"
+            placeholder="Senha"
             onChange={ ({ target }) => setPassword(target.value) }
           />
-        </label>
-        <button
-          type="submit"
-          data-testid="login-submit-btn"
-          disabled={ !enable }
-        >
-          Entrar
-        </button>
-      </form>
+          <p>Esqueceu a senha?</p>
+          <button
+            type="submit"
+            data-testid="login-submit-btn"
+            disabled={ !enable }
+          >
+            Entrar
+            <img src={ nextArrow } alt="login-arrow" />
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
