@@ -1,0 +1,37 @@
+.footer {
+  align-items: center;
+  background-color: rgb(40, 189, 55);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  bottom: 0;
+  color: white;
+  display: flex;
+  float: bottom;
+  font-family: Open Sans Condensed , Arial , sans-serif;
+  justify-content: space-between;
+  padding: 7px 40px;
+  position: absolute;
+  width: 100%;
+}
+
+.footer button {
+  background-color: transparent;
+  border: none;
+}
+
+.footer button:focus {
+  outline: none;
+}
+
+.explore {
+  background: rgb(40, 189, 55);
+  border-radius: 50%;
+  bottom: 0;
+  left: 38%;
+  padding: 10px;
+  position: absolute;
+}
+
+.explore img {
+  width: 60px;
+}
