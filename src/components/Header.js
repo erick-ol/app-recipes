@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from './css/header.module.css';
 
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
@@ -12,7 +13,7 @@ const Header = (props) => {
 
   return (
     <div>
-      <header>
+      <header className={ styles.header }>
         <Link
           to="/perfil"
         >

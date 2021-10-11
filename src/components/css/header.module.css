@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap') ;
+
+.header {
+  align-items: center;
+  background-color: rgb(40, 189, 55);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: white;
+  display: flex;
+  font-family: Open Sans Condensed , Arial , sans-serif;
+  justify-content: space-between;
+  padding: 7px 40px;
+  position: absolute;
+  width: 100%;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+}
+
+.header button:focus {
+  outline: none;
+}

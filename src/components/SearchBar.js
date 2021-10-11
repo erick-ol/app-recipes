@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { GlobalContext } from '../context/GlobalStorage';
+import styles from './css/search.module.css';
+import searchBlack from '../images/searchBlack.svg';
 
 const FIRST_LETTER = 'first-letter';
 const INGREDIENTS = 'ingredients';
@@ -71,55 +73,60 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={ (e) => handleSubmit(e) }>
-      <input
-        type="text"
-        data-testid="search-input"
-        placeholder="Buscar Receita"
-        onChange={ (e) => setSearchInput(e.target.value) }
-        value={ searchInput }
-      />
-      <label htmlFor="ingredient-search-radio">
-        Ingredientes
+    <div className={ styles.search }>
+      <form onSubmit={ (e) => handleSubmit(e) }>
         <input
-          type="radio"
-          id="Ingredientes"
-          value={ INGREDIENTS }
-          data-testid="ingredient-search-radio"
-          name="option"
-          onClick={ () => setOption(INGREDIENTS) }
+          type="text"
+          data-testid="search-input"
+          placeholder="Buscar Receita"
+          onChange={ (e) => setSearchInput(e.target.value) }
+          value={ searchInput }
         />
-      </label>
-      <label htmlFor="name-search-radio">
-        Nome
-        <input
-          type="radio"
-          id="Name"
-          value={ NAME }
-          data-testid="name-search-radio"
-          name="option"
-          onClick={ () => setOption(NAME) }
-          defaultChecked
-        />
-      </label>
-      <label htmlFor="first-letter-search-radio">
-        Primeira letra
-        <input
-          type="radio"
-          id={ FIRST_LETTER }
-          value={ FIRST_LETTER }
-          data-testid="first-letter-search-radio"
-          name="option"
-          onClick={ () => setOption(FIRST_LETTER) }
-        />
-      </label>
-      <button
-        type="submit"
-        data-testid="exec-search-btn"
-      >
-        Buscar
-      </button>
-    </form>
+        <button
+          type="submit"
+          data-testid="exec-search-btn"
+          className={ styles.search_btn }
+        >
+          <img src={ searchBlack } alt="search" />
+        </button>
+        <div className={ styles.radio }>
+          <label htmlFor="name-search-radio">
+            <input
+              type="radio"
+              id="name-search-radio"
+              value={ NAME }
+              data-testid="name-search-radio"
+              name="option"
+              onClick={ () => setOption(NAME) }
+              defaultChecked
+            />
+            Nome
+          </label>
+          <label htmlFor="ingredient-search-radio">
+            <input
+              type="radio"
+              id="ingredient-search-radio"
+              value={ INGREDIENTS }
+              data-testid="ingredient-search-radio"
+              name="option"
+              onClick={ () => setOption(INGREDIENTS) }
+            />
+            Ingredientes
+          </label>
+          <label htmlFor="first-letter">
+            <input
+              type="radio"
+              id={ FIRST_LETTER }
+              value={ FIRST_LETTER }
+              data-testid="first-letter-search-radio"
+              name="option"
+              onClick={ () => setOption(FIRST_LETTER) }
+            />
+            Primeira letra
+          </label>
+        </div>
+      </form>
+    </div>
   );
 };
 

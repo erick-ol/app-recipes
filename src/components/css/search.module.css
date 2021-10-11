@@ -1,0 +1,68 @@
+.search {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  top: 85px;
+  width: 100%;
+}
+
+.search form {
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(158, 158, 158, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 15px;
+  position: relative;
+  width: 80%;
+}
+
+.radio input {
+  filter: hue-rotate(90deg);
+  margin-right: 5px;
+}
+
+.search form > input {
+  border: 1px solid #515151;
+  border-radius: 15px;
+  color: #515151;
+  margin-bottom: 15px;
+  padding: 4px 10px;
+  width: 100%;
+}
+
+.search form > input:focus {
+  outline: none;
+}
+
+.search form > input::placeholder {
+  color: #9f9f9f;
+}
+
+.search form > button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 30px;
+  top: 14px;
+}
+
+.search form > button:focus {
+  outline: none;
+}
+
+.radio {
+  display: flex;
+  font-size: 0.875em;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.radio label {
+  margin: 0;
+}
