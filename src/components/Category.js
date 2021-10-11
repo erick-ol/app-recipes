@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useFetch from '../hooks/useFetch';
+import styles from './css/category.module.css';
 
 const ifHandle = (values, request, setCategoryAux) => {
   const {
@@ -62,31 +63,33 @@ const Category = ({ pageName }) => {
   };
 
   return (
-    <section>
-      {
-        categoryList && (
-          <button
-            data-testid="All-category-filter"
-            type="button"
-            onClick={ () => handleClick('All') }
-          >
-            All
-          </button>
-        )
-      }
-      {
-        categoryList && categoryList.map((category, index) => (
-          <button
-            key={ index }
-            data-testid={ `${category.strCategory}-category-filter` }
-            type="button"
-            onClick={ () => handleClick(category.strCategory) }
-          >
-            { category.strCategory }
-          </button>
-        ))
-      }
-    </section>
+    <div className={ styles.category_div }>
+      <section className={ styles.category }>
+        {
+          categoryList && (
+            <button
+              data-testid="All-category-filter"
+              type="button"
+              onClick={ () => handleClick('All') }
+            >
+              All
+            </button>
+          )
+        }
+        {
+          categoryList && categoryList.map((category, index) => (
+            <button
+              key={ index }
+              data-testid={ `${category.strCategory}-category-filter` }
+              type="button"
+              onClick={ () => handleClick(category.strCategory) }
+            >
+              { category.strCategory }
+            </button>
+          ))
+        }
+      </section>
+    </div>
   );
 };
 

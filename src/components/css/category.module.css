@@ -1,0 +1,25 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: unset;
+  overflow: hidden;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  padding-top: 90px;
+  width: 100%;
+}
+
+.category button {
+  align-items: center;
+  background-color: #8ce294;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  font-family: Nunito , Arial , sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  justify-content: center;
+  margin-left: 15px;
+  padding: 5px 15px;
+  width: 150px;
+}
