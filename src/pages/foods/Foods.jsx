@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Header, Footer, RecipeCard, Category } from '../../components';
 import { GlobalContext } from '../../context/GlobalStorage';
+import styles from '../css/foods.module.css';
 import useFetch from '../../hooks/useFetch';
 
 const Foods = () => {
@@ -29,7 +30,7 @@ const Foods = () => {
   }, [responseFetch]);
 
   return (
-    <div>
+    <div className={ styles.foods }>
       <Header title="Comidas" />
       <Category pageName="comidas" />
       { isList && <RecipeCard products={ foods } pageName="comidas" /> }

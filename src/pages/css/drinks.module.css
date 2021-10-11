@@ -1,0 +1,8 @@
+.drinks {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.drinks::-webkit-scrollbar {
+  display: none;
+}

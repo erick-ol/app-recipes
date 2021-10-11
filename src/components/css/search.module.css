@@ -7,6 +7,7 @@
   position: absolute;
   top: 85px;
   width: 100%;
+  z-index: 100;
 }
 
 .search form {
@@ -23,7 +24,6 @@
 }
 
 .radio input {
-  filter: hue-rotate(90deg);
   margin-right: 5px;
 }
 

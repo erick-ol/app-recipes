@@ -1,0 +1,8 @@
+.foods {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.foods::-webkit-scrollbar {
+  display: none;
+}
