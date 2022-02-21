@@ -26,3 +26,11 @@ Then you just need to start your application to have fun and learn a lot more.
 ```bash
 npm start
 ```
+
+### Images from the project
+
+<img src="./img/inicio.png" width="500">
+<img src="./img/inicio-login.png" width="500">
+<img src="./img/comidas.png" width="500">
+<img src="./img/bebidas.png" width="500">
+<img src="./img/pesquisa.png" width="500">
